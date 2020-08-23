@@ -5,17 +5,17 @@ using System.Text.RegularExpressions;
 
 namespace NerdStore.Core.DomainObjects
 {
-    public class Validacoes
+    public static class Validacoes
     {
         public static void ValidarSeIgual(object objeto1, object objeto2, string mensagem)
         {
-            if (!objeto1.Equals(objeto2))
+            if (objeto1.Equals(objeto2))
                 throw new DomainException(mensagem);
         }
 
         public static void ValidarSeDiferente(object objeto1, object objeto2, string mensagem)
         {
-            if (objeto1.Equals(objeto2))
+            if (!objeto1.Equals(objeto2))
                 throw new DomainException(mensagem);
         }
 
@@ -82,33 +82,33 @@ namespace NerdStore.Core.DomainObjects
                 throw new DomainException(mensagem);
         }
 
-        public static void ValidarSeMenorOuIgualMinimo(long valor, long minimo, string mensagem)
+        public static void ValidarSeMenorQue(long valor, long minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
                 throw new DomainException(mensagem);
         }
         
-        public static void ValidarSeMenorOuIgualMinimo(double valor, double minimo, string mensagem)
+        public static void ValidarSeMenorQue(double valor, double minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
                 throw new DomainException(mensagem);
         }
 
-        public static void ValidarSeMenorOuIgualMinimo(decimal valor, decimal minimo, string mensagem)
+        public static void ValidarSeMenorQue(decimal valor, decimal minimo, string mensagem)
         {
-            if (valor <= minimo)
+            if (valor < minimo)
                 throw new DomainException(mensagem);
         }
 
         public static void ValidarSeFalso(bool boolValor, string mensagem)
         {
-            if (boolValor)
+            if (!boolValor)
                 throw new DomainException(mensagem);
         }
 
         public static void ValidarSeVerdadeiro(bool boolValor, string mensagem)
         {
-            if (!boolValor)
+            if (boolValor)
                 throw new DomainException(mensagem);
         }
     }

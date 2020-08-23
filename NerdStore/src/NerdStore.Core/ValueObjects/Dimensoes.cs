@@ -13,9 +13,9 @@ namespace NerdStore.Core.ValueObjects
 
         public Dimensoes(decimal altura, decimal largura, decimal profundidade)
         {
-            Validacoes.ValidarSeMenorOuIgualMinimo(altura, 1, "O campo Altura não pode ser menor ou igual 0;");
-            Validacoes.ValidarSeMenorOuIgualMinimo(largura, 1, "O campo Largura não pode ser menor ou igual 0;");
-            Validacoes.ValidarSeMenorOuIgualMinimo(profundidade, 1, "O campo Profundidade não pode ser menor ou igual 0;");
+            Validacoes.ValidarSeMenorQue(altura, 1, "O campo Altura não pode ser menor ou igual 0;");
+            Validacoes.ValidarSeMenorQue(largura, 1, "O campo Largura não pode ser menor ou igual 0;");
+            Validacoes.ValidarSeMenorQue(profundidade, 1, "O campo Profundidade não pode ser menor ou igual 0;");
 
             Altura = altura;
             Largura = largura;
